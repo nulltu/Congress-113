@@ -1,0 +1,75 @@
+body{
+    font-family: 'Asap', sans-serif;
+    
+    background-color: rgb(255, 255, 255);
+}
+
+.container-flex-header{
+display: flex;
+justify-content: space-between;
+
+}
+
+
+.container-flex-header div img{
+    width: 15em;
+    padding: 2em;
+}
+
+ion-icon {
+    font-size: 150%;
+    margin-bottom: -0.2em;
+    margin-right:0.2em
+
+  }
+
+.container-flex-icon{
+margin-top: 2.5em;
+margin-right: 2em;    
+display: flex;
+align-items: baseline;
+padding: 0px;
+}
+
+.container-fluid{
+    padding: 50px;
+}
+
+nav{
+    background-color: rgba(66, 66, 66, 0.1);
+}
+
+.footer{
+    background-color: rgba(66, 66, 66, 0.1);
+    text-align: center;
+    padding: 2em;
+}
+
+.img-home{
+    width: 18em;
+}
+
+.line-divition{
+
+    size: 10em;
+    width: 100%;
+}
+
+/*------------------------------------------------------*/
+
+
+.dropdown-item:hover{
+    background-color: rgba(66, 66, 66, 0.1);
+}
+
+.nav-link:hover{
+    background-color: rgba(66, 66, 66, 0.1)!important;
+}
+
+.content{
+    background-color: rgba(66, 66, 66, 0.1);
+}
+
+.titleTabla{
+    text-align: center;
+}
