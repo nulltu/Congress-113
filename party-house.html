@@ -136,8 +136,11 @@
                     <th>N. Party Votes</th>
                     <th>%Party Votes</th>
                 </thead>
-                <tbody id="mostLoyalHouse">
-
+                    <tbody v-for="member in mostLoyalHouse">
+                        <td><a v-bind:href="member.url" target="_blank">{{member.last_name}} {{member.middle_name}} {{member.first_name}} </a>
+                        </td>
+                        <td>{{Math.floor((member.total_votes*member.votes_with_party_pct)/100)}}</td>
+                        <td>{{member.votes_with_party_pct}}%</td>
                 </tbody>
             </table>
         </div>

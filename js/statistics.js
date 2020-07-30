@@ -42,7 +42,9 @@ function myProgram(myJsonHouse) {
       pviHouse:0,
       leastEnHouse:[],
       leastLoyalHouse:[],
-      numberPartyVotesHouse:0
+      numberPartyVotesHouse:0,
+      mostLoyalHouse:[],
+      mostEnHouse:[]
     }
   })
 
@@ -50,11 +52,11 @@ function myProgram(myJsonHouse) {
 
     myJsonHouse.map(party => {
       if (party.party == 'R') {
-        app.demoHouse++
+        app.repHouse++
         //console.log(app.demoHouse)
       }
       else if (party.party == 'D') {
-        app.repHouse++
+        app.demoHouse++
       }
       else if (party.party == 'ID') {
         app.indHouse++
@@ -109,6 +111,7 @@ function myProgram(myJsonHouse) {
   //console.log(percTenHouse)
 
 // House - Least Engaged 
+
 var orderHouseLeast = myJsonHouse.sort((a, b) => (b.missed_votes_pct - a.missed_votes_pct))
 
 for (var i = 0; i < percTenHouse; i++) {
@@ -116,6 +119,7 @@ for (var i = 0; i < percTenHouse; i++) {
 }
 
 
+//Least Loyal 
   //Ordeno los miembros de acuerdo a la cantidad de votos para con su partido
   var orderPartyHouse = myJsonHouse.sort((a, b) => (a.votes_with_party_pct - b.votes_with_party_pct))
   //console.log(orderPartyHouse)
@@ -123,17 +127,32 @@ for (var i = 0; i < percTenHouse; i++) {
   for (var i = 0; i < percTenHouse; i++) {
     app.leastLoyalHouse.push(orderPartyHouse[i])
   }
- console.log(app.leastLoyalHouse)
+ //console.log(app.leastLoyalHouse)
+
+
+// House - Most Loyal 
+
+var orderPartyHouseMost = myJsonHouse.sort((a, b) => (b.votes_with_party_pct - a.votes_with_party_pct))
+  //console.log(orderPartyHouse)
+
+  for (var i = 0; i < percTenHouse; i++) {
+    app.mostLoyalHouse.push(orderPartyHouseMost[i])
+  }
+
+  console.log(app.mostLoyalHouse)
+
+// House Most Engaged
+  var orderArrayHouse = myJsonHouse.sort((a, b) => (a.missed_votes_pct - b.missed_votes_pct))
+
+  //Creo un For con la finalidar de recorrer el array para ponerle el limite con el porcentaje obtenido anteriormente.
+  //Despues de tener el 10% pusheo esa data al objeto estadisticas. (Como un propiedad mas, pero que es un objeto listo para mostrar)
+  for (var i = 0; i < percTenHouse; i++) {
+    app.mostEnHouse.push(orderArrayHouse[i])
+  }
 
 
 
-
-
-
-
-
-
-
+/*---------------------------------------------------------------- SENATE ----------------------------------------------------------------------------*/
 
 
 
