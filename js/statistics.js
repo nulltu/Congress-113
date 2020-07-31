@@ -160,8 +160,6 @@ function myProgram(dataApi) {
       app.pvdSe = 0
     }
     
-
-
     var arrayIndSe = dataApi.filter(member => member.party == 'ID')
     app.numIndSe = arrayIndSe.length //total Independents
     var sumValIndSe = 0;
